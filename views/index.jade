@@ -1,0 +1,41 @@
+include ./includes/header.jade
+body.sticky-nav
+  include ./includes/site-header.jade
+  .header-image.bg-purple.no-padding.no-overlay
+    .container
+      br
+      h1 <strong>Elastic,</strong> Next-Generation Cloud Computing
+      h4 Elastic is a crypto-currency driven infrastructure for decentralized computation. It is a free, non-commercial and independent open source project with contributors from around the world.
+      br
+  main
+    section#sec-1
+      div.row(style="margin-top: -50px; padding-right: 20px;")
+        div.col-xs-6(style="padding-left:60px; padding-right: 60px;")
+          header.section-header(style="margin-bottom: 0px")
+            span Why is Elastic so Awesome?
+          ul.features
+            li
+              .icon
+                i.fa.fa-wrench
+              h5  Meaningful
+              p
+                | Miners are paid Elastic Coins (ELC) for directing their processing power towards arbitrary user-provided tasks instead of wasting energy on calculating Bitcoin's proof-of-work function. In fact, Bitcoin mining burns around 7000 MW daily - equaling the power output of one large nuclear power plant.
+            li
+              .icon
+                i.fa.fa-code
+              h5 Full of features
+              p
+                | Scientists and businesses that require on-demand computing power can use Elastic's SDK in order to develop their tasks. Those tasks are submitted to the Elastic network and then worked off by the miners. Developers have immense amounts of computational resources right at their fingertips.
+
+            li
+              .icon
+                i.fa.fa-bar-chart
+              h5 Market Driven
+              p
+                | Elastic claims that the price for computational power is market driven. Think of it as an auction where buyers of computational resources (such as scientists) outbid each other to have their work solved. This is very profitable for the miners. 
+
+        div.col-xs-6
+          .video
+            iframe(src='https://player.vimeo.com/video/157901432', width='500', height='281', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
+
+include ./includes/footer.jade

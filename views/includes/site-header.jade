@@ -1,0 +1,21 @@
+header.site-header
+  nav.site-navigation
+    .container-fluid
+      .logo
+        a.logo-default(href='/')
+          img(src='img/logo.png', alt='logo')
+        a.logo-transparent(href='/')
+          img(src='img/logo-alt.png', alt='logo')
+      a.navbar-toggle(href='#', data-toggle='offcanvas')
+        i.fa.fa-bars
+      ul.nav-menu
+        li
+          a.active(href='/') What is Elastic
+        li
+          a(href='/crowdsale') Crowdfunding (
+            span#buyer_btc_2 ---
+            span  BTC)
+        li
+          a(href='/faq') FAQ
+        li
+          a.menu-highlighted(href='https://github.com/elastic-project/whitepaper/raw/master/whitepaper.pdf') Whitepaper

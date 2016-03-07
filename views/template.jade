@@ -1,0 +1,50 @@
+include ./includes/header.jade
+body.sticky-nav
+  nav.page-navigation.full-topbar
+    ul.nav
+      li
+        a(href='#sec-1') Section 1
+      li
+        a(href='#sec-2') Section 2
+      li
+        a(href='#sec-3') Section 3
+  include ./includes/site-header.jade
+  .header-image.bg-purple.no-padding.no-overlay
+    .container
+      br
+      h1 <strong>Elastic,</strong> Next-Generation Cloud Computing
+      h4 Elastic is a crypto-currency driven infrastructure for the decentralized computation of arbitrary user-provided tasks over the Internet.
+      br
+  main
+    section#sec-1
+      div.row(style="margin-top: -30px; padding-right: 20px;")
+        div.col-xs-6(style="padding-left:60px; padding-right: 60px;")
+          header.section-header(style="margin-bottom: 0px")
+            span Why is Elastic so Awesome?
+          ul.features
+            li
+              .icon
+                i.fa.fa-wrench
+              h5  Meaningful
+              p
+                | Miners are paid Elastic Coins (ELC) for directing their processing power towards arbitrary user-provided tasks instead of wasting energy on calculating regular SHA256 hashes.
+            li
+              .icon
+                i.fa.fa-code
+              h5 Full of features
+              p
+                | Scientists and businesses that require on-demand computing power can use Elastic's SDK in order to develop their tasks. Those tasks are calculated by the miners.
+
+            li
+              .icon
+                i.fa.fa-bar-chart
+              h5 Market Driven
+              p
+                | The whole process is market driven, blabla, here we need some more intelligent text, right?
+
+
+        div.col-xs-6
+          .video
+            iframe(width='500', height='250', src='https://www.youtube.com/embed/Umbvl76H3zs', frameborder='0', allowfullscreen='')
+
+include ./includes/footer.jade

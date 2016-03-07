@@ -1,0 +1,124 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var debug = require('debug')('miragecoin-express-crowdsale:server');
+var http = require('http');
+var fs = require('fs');
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port);
+var io = require('socket.io').listen(server.listen(port));
+io.sockets.on('connection', function (socket) {
+    // connection handler
+});
+
+server.on('error', onError);
+server.on('listening', onListening);
+
+function pushUpdatesToEveryone(){
+  console.log("Pushing Live Sale data");
+  var json_blocks;
+  var cntr_val = 0;
+  var btc_val = 00;
+  var mir_val = 0;
+  var perc_val = 0;
+  try {
+    json_blocks = JSON.parse(fs.readFileSync("genesis-block/genesis-block.json"));
+
+    json_blocks.forEach(function(value ,i){
+        cntr_val ++;
+        btc_val += value.btc_amount;
+        mir_val += value.mir_amount;
+    });
+
+    perc_val = (mir_val/5000000)*100;
+
+    io.sockets.emit('message', { count: cntr_val, btc: btc_val, percent: perc_val });
+  }
+  catch (e) {
+    console.log(e);
+  }
+
+}
+
+var interval = setInterval(pushUpdatesToEveryone, 5000);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}
