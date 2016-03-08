@@ -119,7 +119,7 @@ function getBalance(addr){
             textColor: '#606873'
         },
         grid: {
-            backgroundColor: '#ffffff',
+            backgroundColor: '#F2F2F2',
             gridLineColor: '#cfcfcf',
             gridLineWidth: 1,
             shadow: false        }
@@ -136,7 +136,7 @@ function getBalance(addr){
 
 	$.plot2 = $.jqplot ('chart2', [line1], {
 	      // Give the plot a title.
-	      title: 'Fig 1: Amount of ELC Received Per BTC Depending on Buy-In Time',
+	      title: 'Fig 1: Voluntary credit of Elastic Coins per donated BTC',
 	      // You can specify options for all axes on the plot at once with
 	      // the axesDefaults object.  Here, we're using a canvas renderer
 	      // to draw the axis label which allows rotated text.
@@ -154,7 +154,7 @@ function getBalance(addr){
 							max:430000,
 		          tickInterval:3000,
 							pad: 0,
-		          label:'Time of Buy-In (Bitcoin block)'
+		          label:'Donation confirmed in block #'
 	          },
 						yaxis:{
 							min:0,
@@ -168,7 +168,7 @@ function getBalance(addr){
 			           name: 'stack-overflow',
 			           x: xvar, // x-axis position where you want to draw the vertical line.
 			           lineWidth: 6,
-			           color: 'rgb(0, 0, 0)',
+			           color: 'rgb(255, 128, 0)',
 			           shadow: false
 			       }}
 			    ]

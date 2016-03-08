@@ -30,7 +30,7 @@ body.sticky-nav
           p(style="color: white")
             span#buyer_btc ---
             span  BTC
-          h6 Raised by <span id="buyer_count">--</span> people
+          h6 Donated by <span id="buyer_count">--</span> people
         .counter.col-xs-6.col-md-4
           i.fa.fa-percent(style="color: white")
           p(style="color: white")
@@ -46,33 +46,30 @@ body.sticky-nav
         br
   main
   section#sec-quick-start
-   .container(style="margin-top: -30px; padding-right: 20px;")
+   .container(style="margin-top: -40px; padding-right: 20px;")
      p.text-cols-2.text-justify
-      |  In order to ensure enough funding for the present and on-going development we have decided to launch a donation based crowdfunding (note, even though we at some point refer to it as "Token Sale" this process is donation based, you are not buying you are donating). Please understand that no shares in a company are offered here and no promises about any future rewards are made. Funds collected in this donation based crowdfunding are meant to help developing this coin the way it deserves, as well as finance the future maintenance and marketing. Your payment, however, is an altruistic donation with no legal (or other) obligations of either side tied to it. Yet, people who crowdfund our idea do get a certain amount of ELC (Elastic Coin) credited voluntarily once the platform launches. Please do not consider ELC to be shares, futures, certificates, securities, bonds, treasures, profit-sharing agreements, or anything similar. Please be aware that <b>you are donating here</b> and by sending Bitcoins to the address below accept that you are given <b>no guarantees</b> whatsoever by anyone.
+      | <strong>Donations</strong> are now being accepted for the upkeep and support of Elastic. Please understand that no shares in a company are offered here and no promises about any future rewards are made. Your BTC payment is an altruistic donation with no legal (or other) obligations or guarantees of either side tied to it. Still, we give away a certain amount of Elastic Coins (ELC) <i>voluntarily</i> to those who support Elastic and record it in the so-called genesis block. This will later be used as the first block in the blockchain and distribute the Elastic Coins in circulation. Once we have added you to the genesis block, our voluntary action is finished. Please do not consider Elastic Coins (ELC) to be shares, futures, certificates, securities, bonds, treasures, profit-sharing agreements, or anything similar. All donations are strictly non-refundable.
       .col-xs-6
-        .callout.callout-warning(role='warning')
-          h4 How it works
+        .callout.callout-info(role='warning')
+          h4 How many Elastic Coins you get:
           p(style="padding-top: 5px;")
-          | In order to donate towards our idea and get your ELC, all you have to do is send a BTC transaction to our crowdfunding BTC address (on the right). The minimum amount is 0.01 BTC. Your ELC are credited to the public key which is associated with the bitcoin address your funds come from after only 1 confirmation of your transaction.
-        .callout.callout-warning(role='warning')
-          h4 How many ELC do you get?
-          p(style="padding-top: 5px;")
-          |  Depending on the time your transaction appears in the block chain, you will be credited a certain amount of ELC (cf. Fig 1). All ELC credits are automatically commited after only 1 confirmations of your Bitcoin transaction to our
+          |  Depending on the time your donation transaction appears in the block chain, you will be voluntarily credited a certain amount of ELC (see chart below). This process is fully automatic and requires only 1 confirmation. The current status of the genesis-block can be seen in the  
           a(href='https://raw.githubusercontent.com/elastic-project/genesis-block/master/genesis-block.json') genesis block repository on Github
-          | . You can perform multiple donations from one address. Moving received ELC from one public key to another is also possible <a href="http://elastic.pro/send.html">here</a> (all transfers will be also committed to the GitHub for transparency reasons).
+          | .
           #chart2.one-third.inline-chart(style="width:490; margin-bottom: 0px; margin-top: 25px;")
+          | <br><br> You can calculate the exact number using the formula below:<br>(<i>b</i> is the block # in which your transaction appears for the first time)<br><br><img style="margin-left: 50px;" src=eqn.png> <!--f(b)=\max(\min(-\frac{4000}{25920}\cdot(b-400000)+8000,8000),0) -->
       .col-xs-6
+        .callout.callout-info(role='alert')
+          h4 Get Started
+          p(style="padding-top: 5px;")
+            .row
+              .col-xs-3
+                | <img src="qr.png"/>
+              .col-xs-9
+                p(style="font-family: monospace;font-size: 18px;font-style: normal;") 3Q2aKEGFTKDw3hghsBifXp39CZVMtZukxn
+                | Donators need to send a BTC transaction to the BTC address above <font color=red><b>(2 of 2 multisignature offline storage)</b></font>. The minimum amount is 0.01 BTC. All donations are non-refundable. Your ELC are credited to the public key(s) associated with your bitcoin address.
         .callout.callout-danger(role='warning')
           h4 Important Hints
           p(style="padding-top: 5px;")
           | Please make sure, that you keep the private keys to the bitcoin addresses you used to send the crowdfunding BTC from in a safe place. All ELC are being sent to the public key associated with these addresses. More precisely, if you use funds from multiple addresses the first one appearing in the inputs is used to deliver your ELC. To avoid confusion it is always best to first send all your BTC to one address, and use that to participate in the crowdfunding. In this context it is important to mention to *NEVER* use an exchange directly to crowdfund us as you most likely do not own the private keys to the addresses where the funds are sent from. Also: Bitcoin-Qt's coin control feature might come in handy.<br><font color=red>Generally, you should be safe if you keep a backup of your wallet.dat in a safe place. Wallet backups and/or recovery phrases from Blockchain.info, HIVE or Breadwallets are fine as well</font>. An easy <i>import function</i> will be integrated in the reference client to swipe your ELC from your wallet.dat.
-
-        .callout.callout-info(role='alert')
-          h4 Get Started
-          p(style="padding-top: 5px;")
-            .col-xs-3
-              | <img src="qr.png"/>
-            .col-xs-9
-              p(style="font-family: monospace;font-size: 18px;font-style: normal;") 3Q2aKEGFTKDw3hghsBifXp39CZVMtZukxn
-              | In order to donate towards our idea and get your ELC, all you have to do is send a BTC transaction to our crowdfunding BTC address <font color=red><b>(2 of 2 multisignature offline storage of which I hold one key)</b></font>. The minimum amount is 0.01 BTC. All donations are non-refundable. Your ELC are credited to the public key which is associated with the bitcoin address your funds come from.
 include ./includes/footer.jade
