@@ -1,24 +1,54 @@
 include ./includes/header.jade
-body.sticky-nav
-  include ./includes/site-header.jade
-  .header-image.bg-purple.no-padding.no-overlay
-    .container
-      br
-      h1 <strong>Elastic,</strong> Next-Generation Cloud Computing
-      h4 In this section you will learn everything about Elastic Project.
-      br
-  main
-    section#sec-1
-      div.row(style="margin-top: -30px; padding-right: 20px;")
-        header.section-header(style="margin-bottom: 0px")
-          br
-          br
-          span This section is undergoing a major revision
-          br
-          br
-          br
-          br
-          br
-          
-
+body.sticky-nav.transparent-nav
+  header.site-header
+    nav.site-navigation
+      .container-fluid
+        .logo
+          a.logo-default(href='/')
+            img(src='img/logo.png', alt='logo')
+          a.logo-transparent(href='/')
+            img(src='img/logo-alt.png', alt='logo')
+        a.navbar-toggle(href='#', data-toggle='offcanvas')
+          i.fa.fa-bars
+        ul.nav-menu
+            li
+              a(href='/') What is Elastic
+            li
+              a.active(href='/faq') FAQ
+            li
+              a.menu-highlighted(href='/crowdsale',style="background-color: #FF7300;") Crowdfunding (
+                span#buyer_btc_2 ---
+                span  BTC)
+            li
+              a.menu-highlighted(href='https://github.com/elastic-project/whitepaper/raw/master/whitepaper.pdf') Whitepaper
+    .header-image.bg-img-faq-header.no-padding-bottom.text-center(style='background-image: url("img/bg-page.jpg");')
+      .container
+        h1
+          strong Any questions
+          |  left about Elastic Project?
+        h5
+          | Probably you'll find your answer here. Contact us if you don't find what you're looking for.
+        br
+        br
+        #faq-search.form-group
+          i.fa.fa-search.fa-flip-horizontal1
+          input.form-control(type='text', name='search', placeholder='Type to search...')
+        br
+        br
+        br
+    // END Header image
+    // END Site header
+    // Main container
+  main#faq-result
+    section#sec-general.no-border-bottom
+      .container
+        header.section-header.text-left
+          span Common questions
+          h2 General
+        ul.faq-items
+          li
+            h4 Why is there no content?
+            p
+              | Because nobody created it.
+             
 include ./includes/footer.jade

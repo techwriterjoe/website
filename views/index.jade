@@ -1,6 +1,31 @@
 include ./includes/header.jade
 body.sticky-nav
-  include ./includes/site-header.jade
+  header.site-header
+    .alert.alert-info(role='alert',style="margin-bottom: 0px; padding-left: 25px;")
+        button.close(type='button', data-dismiss='alert') ×
+        strong Holy guacamole!
+        |  We are currently <b>giving away Elastic Coins</b> to all of our donators. Want some? Be quick! The coin distribution ends <b>when Bitcoin block 425920 has passed</b>.
+    nav.site-navigation
+      .container-fluid
+        .logo
+          a.logo-default(href='/')
+            img(src='img/logo.png', alt='logo')
+          a.logo-transparent(href='/')
+            img(src='img/logo-alt.png', alt='logo')
+        a.navbar-toggle(href='#', data-toggle='offcanvas')
+          i.fa.fa-bars
+        ul.nav-menu
+          li
+            a.active(href='/') What is Elastic
+          li
+            a(href='/faq') FAQ
+          li
+            a.menu-highlighted(href='/crowdsale',style="background-color: #FF7300;") Crowdfunding (
+              span#buyer_btc_2 ---
+              span  BTC)
+          li
+            a.menu-highlighted(href='https://github.com/elastic-project/whitepaper/raw/master/whitepaper.pdf') Whitepaper
+
   .header-image.bg-purple.no-padding.no-overlay
     .container
       br
