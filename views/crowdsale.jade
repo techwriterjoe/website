@@ -1,6 +1,9 @@
 include ./includes/header.jade
 body.sticky-nav
   header.site-header
+    .alert.alert-danger(role='alert',style="margin-bottom: 0px; padding-left: 25px;")
+        strong Warning
+        |  We are currently <b>based in Switzerland</b> and only subject to the laws of Switzerland, and to the exclusive jurisdiction of the Swiss courts. You are requested to consult your lawyer to see if donating here (and getting ELC in return) is legal in your jurisdiction before participating</b>. <b>If you are using this website, you confirm that you have done so.</b>
     nav.site-navigation
       .container-fluid
         .logo
@@ -44,11 +47,12 @@ body.sticky-nav
             span  Blocks
           h6 Time left
         br
+  .alert.alert-info(role='alert',style="margin-bottom: 0px; padding-left: 25px;")
+      p.text-cols-2.text-justify
+        | <strong>Donations</strong> are now being accepted for the upkeep and support of Elastic. Please understand that no shares in a company are offered here and no promises about any future rewards are made. Also, the software related to Elastic comes without any sort of warranty or insurance. We cannot guarantee our software will be totally bug free or that it will function as claimed, but it will always be free and open source. A dontation towards the Elastic project, even during the coin distribution phase, does not imply any obligations, promises or guarantees from either side: a donation is a donation and is non refundable. Also, Elastic Project does not come with any guarantee of success. Your use of our website or our software or your participation in the dontation based crowdfunding signifies your acceptance of these terms. We give away a certain amount of Elastic Coins (ELC) <i>voluntarily</i> to those who support Elastic and record it in the so-called genesis block. This will later be used as the first block in the blockchain and distribute the Elastic Coins in circulation. Please do not consider Elastic Coins (ELC) to be shares, futures, certificates, securities, bonds, treasures, profit-sharing agreements, or anything similar. To repeat, all donations are strictly non-refundable. The ELC giveaway ends when Bitcoin block 425920 has passed.</b> 
   main
   section#sec-quick-start
    .container(style="margin-top: -40px; padding-right: 20px;")
-     p.text-cols-2.text-justify
-      | <strong>Donations</strong> are now being accepted for the upkeep and support of Elastic. Please understand that no shares in a company are offered here and no promises about any future rewards are made. Your BTC payment is an altruistic donation with no legal (or other) obligations or guarantees of either side tied to it. Still, we give away a certain amount of Elastic Coins (ELC) <i>voluntarily</i> to those who support Elastic and record it in the so-called genesis block. This will later be used as the first block in the blockchain and distribute the Elastic Coins in circulation. Once we have added you to the genesis block, our voluntary action is finished. Please do not consider Elastic Coins (ELC) to be shares, futures, certificates, securities, bonds, treasures, profit-sharing agreements, or anything similar. All donations are strictly non-refundable. <b><font color=red>Note: The distribution of ELC ends when the Bitcoin blockchain has passed block #425920 or when a total of 5M ELC have been given away.</font></b> 
       .col-xs-6
         .callout.callout-info(role='warning')
           h4 How many Elastic Coins you get:
@@ -58,15 +62,18 @@ body.sticky-nav
           #chart2.one-third.inline-chart(style="width:490; margin-bottom: 0px; margin-top: 25px;")
           | <br><br> You can calculate the exact number using the formula below:<br>(<i>b</i> is the block # in which your transaction appears for the first time)<br><br><img style="margin-left: 50px;" src=eqn.png> <!--f(b)=\max(\min(-\frac{4000}{25920}\cdot(b-400000)+8000,8000),0) -->
       .col-xs-6
-        .callout.callout-info(role='alert')
+        .callout.callout-info(role='alert',style="height: 280px")
           h4 Get Started
           p(style="padding-top: 5px;")
-            .row
-              .col-xs-3
-                | <img src="qr.png"/>
-              .col-xs-9
-                p(style="font-family: monospace;font-size: 18px;font-style: normal;") 3Q2aKEGFTKDw3hghsBifXp39CZVMtZukxn
-                | Donators need to send a BTC transaction to the BTC address above <font color=red><b>(2 of 2 multisignature offline storage)</b></font>. The minimum amount is 0.01 BTC. All donations are non-refundable. Your ELC are credited to the public key(s) associated with your bitcoin address.
+            #hil1
+              | <a href="#" onclick="document.getElementById('hil1').style.visibility='hidden';document.getElementById('hil2').style.visibility='visible';document.getElementById('hil1').style.visibility='hidden';document.getElementById('hil1').style.height=0; document.getElementById('hil1').style.visibility='hidden';document.getElementById('hil1').innerHTML=''; document.getElementById('hil2').style.position='initial';"><img src="superblur.png"/></a>
+            #hil2(style="visibility: hidden; position: absolute")
+                .row
+                    .col-xs-3
+                      | <img src="qr.png"/>
+                    .col-xs-9
+                      p(style="font-family: monospace;font-size: 18px;font-style: normal;") 3Q2aKEGFTKDw3hghsBifXp39CZVMtZukxn
+                      | Donators need to send a BTC transaction to the BTC address above <font color=red><b>(2 of 2 multisignature offline storage)</b></font>. The minimum amount is 0.01 BTC. All donations are non-refundable. Your ELC are credited to the public key(s) associated with your bitcoin address.
         .callout.callout-danger(role='warning')
           h4 Important Hints
           p(style="padding-top: 5px;")
